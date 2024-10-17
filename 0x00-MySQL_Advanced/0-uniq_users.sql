@@ -1,6 +1,6 @@
 -- a SQL script that creates a table users
-CREATE TABLES IF NOT EXISTS users (
+CREATE TABLE IF NOT EXISTS users (
     id NULL PRIMARY KEY AUTOINCREMENT,
-    email VARCHAR(255),
+    email VARCHAR(255) NOT NULL UNIQUE,
     name VARCHAR(255)
 );
