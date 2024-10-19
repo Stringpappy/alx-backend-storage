@@ -8,12 +8,12 @@ BEGIN
     DECLARE mypro_count INT DEFAULT 0;
 
     SELECT SUM(score)
-        INTO agg_score
-        FROM corrections
+        INTO agg_score;
+        FROM corrections;
         WHERE corrections.user_id = user_id;
     SELECT COUNT(*)
-        INTO mypro_count
-        FROM corrections
+        INTO mypro_count;
+        FROM corrections;
         WHERE corrections.user_id = user_id;
 
     UPDATE users
