@@ -1,0 +1,2 @@
+//command e thcreate and uses mongodb database
+use my_db;

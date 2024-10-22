@@ -1,0 +1,2 @@
+//code that deletes all file in with name='holberton school' in the school table
+db.school.deleteMany({name: "Holberton school"});

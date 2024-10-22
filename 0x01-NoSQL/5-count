@@ -1,0 +1,2 @@
+// func that count doc in th school collection
+db.school.find().count();

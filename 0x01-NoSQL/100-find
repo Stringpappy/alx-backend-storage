@@ -1,0 +1,4 @@
+//code that lists all document with name starting with holberton
+// in the school table/collection
+db.school.find({name: /Holberton.*/}).forEach(printjson);
+

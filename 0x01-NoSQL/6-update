@@ -1,0 +1,6 @@
+//code that add a new attributr to a file in the schol table
+db.school.update(
+    {name: "Holberton school"},
+    {"$set": {address: "972 Mission street"}},
+    {multi: true}
+);
