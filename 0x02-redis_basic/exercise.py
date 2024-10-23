@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""refis module"""
+"""
+refis module
+"""
 import redis
 import uuid
 from typing import Union, Callable, Optional, Any
 
 
-
 def count_calls(method: Callable) -> Callable:
     """
-    func <F11><F11>Tracks the number of calls made to a method in a Cache class.
+    funcTracks the number of calls made to a method in a Cache class.
     """
     @wraps(method)
     def provoke(self, *args, **kwargs) -> Any:
@@ -19,6 +20,7 @@ def count_calls(method: Callable) -> Callable:
             self._redis.incr(method.__qualname__)
         return method(self, *args, **kwargs)
     return provoke
+
 
 class Cache:
     """A simple cache class using Redis to store and retrieve data."""
