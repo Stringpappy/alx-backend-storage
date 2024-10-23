@@ -4,8 +4,7 @@ pythom module that uses Redis NoSQL data storage.
 """
 import uuid
 import redis
-from functools import wraps
-from typing import Any, Callable, Union
+from typing import Union
 
 
 class Cache:
@@ -17,7 +16,7 @@ class Cache:
         Initialize the Cache instance.
         """
         self._redis = redis.Redis()
-        self._redis.flushdb(True)
+        self._redis.flushdb()
 
     @call_history
     @count_calls
@@ -25,6 +24,6 @@ class Cache:
         """
         a func that Stores a value in a Redis data storage and returns the key
         """
-        data_key = str(uuid.uuid4())
-        self._redis.set(data_key, data)
-        return data_key
+        dkey = str(uuid.uuid4())
+        self._redis.set(dkey, data)
+        return dkey
