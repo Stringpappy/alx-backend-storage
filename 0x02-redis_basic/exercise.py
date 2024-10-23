@@ -7,6 +7,7 @@ import redis
 from functools import wraps
 from typing import Any, Callable, Union
 
+
 class Cache:
     """
     a func that represents an object for storing data in a Redis data storage.
@@ -27,4 +28,3 @@ class Cache:
         data_key = str(uuid.uuid4())
         self._redis.set(data_key, data)
         return data_key
-
